@@ -12,3 +12,5 @@ def nslookup(url):
     return(ip)
 
 print(nslookup('ams.dslam.acc.oam.kpn.org'))
+
+
