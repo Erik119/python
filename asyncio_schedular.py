@@ -1,5 +1,5 @@
 import asyncio
-import date_and_time
+import datetime
 
 def ams_cron():
     x = range(0,60,5)
@@ -27,7 +27,7 @@ async def schedular():
         if second in ams_cron():
             asyncio.create_task(ams_collection())
         while (last_second == second):
-            second = date_and_time.date_and_time.now().second
+            second = datetime.datetime.now().second
             pending = asyncio.all_tasks()
             print('    number of task(s) = ' + str(len(pending)))
             await asyncio.sleep(.3)

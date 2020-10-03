@@ -6,9 +6,8 @@ def nslookup(url):
     ip = None
     for line in stream:
         if url in line:flag = True
-        if flag:
-            if 'Address' in line:
-                ip = line.split()[-1]
+        if flag and 'Address' in line:
+            ip = line.split()[-1]
     return(ip)
 
 print(nslookup('ams.dslam.acc.oam.kpn.org'))
